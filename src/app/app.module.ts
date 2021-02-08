@@ -11,6 +11,10 @@ import { ResourceNotFoundComponent } from './shared/components/resource-not-foun
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material/material.module';
 import { NgxModule } from './shared/ngx/ngx.module';
+import { AdminModule } from './admin/admin.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilesModule } from './shared/files/files.module';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -20,14 +24,19 @@ import { NgxModule } from './shared/ngx/ngx.module';
     AlertComponent,
     ApplicationErrorComponent,
     PageNotFoundComponent,
-    ResourceNotFoundComponent
+    ResourceNotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AdminModule,
     MaterialModule,
-    NgxModule
+    NgxModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FilesModule
 
   ],
   providers: [],
