@@ -9,7 +9,9 @@ import { ApplicationErrorComponent } from './shared/components/application-error
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { ResourceNotFoundComponent } from './shared/components/resource-not-found/resource-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MaterialModule } from './shared/material/material.module';
+import { NgxModule } from './shared/ngx/ngx.module';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    //NgbModule
+    MaterialModule,
+    NgxModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
