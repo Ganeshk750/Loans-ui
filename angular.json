@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ecommerce-ui",
+            "outputPath": "dist/shop-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ecommerce-ui:build"
+            "browserTarget": "shop-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ecommerce-ui:build:production"
+              "browserTarget": "shop-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ecommerce-ui:build"
+            "browserTarget": "shop-ui:build"
           }
         },
         "test": {
@@ -112,16 +112,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ecommerce-ui:serve"
+            "devServerTarget": "shop-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ecommerce-ui:serve:production"
+              "devServerTarget": "shop-ui:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "ecommerce-ui"
+  "defaultProject": "shop-ui"
 }
