@@ -1,4 +1,5 @@
-<mat-toolbar color="primary" class="example-footer">
+
+<mat-toolbar color="primary" class="example-header">
     <mat-toolbar-row>
        <button mat-icon-button (click)="sidenav.toggle()">
            <mat-icon>Menu</mat-icon>
@@ -9,15 +10,15 @@
        <a mat-button>Products</a>
        <a mat-button>Contact us</a>
        </div>
-    </mat-toolbar-row>
-    <div class="col-md-5 justify-content-end">
+
+       <div class="col-md-5 justify-content-end">
        <a mat-button>Login</a>
        <a mat-button>Register</a>
        <a mat-button [matMenuTriggerFor]="managementMenu">Management</a>
        <mat-menu #managementMenu>
-          <a mat-button>Dashboard</a>
-           <a mat-button>M-Categories</a>
-            <a mat-button>M-User</a>  
+          <a mat-menu-item>Dashboard</a>
+           <a mat-menu-item>M-Categories</a>
+            <a mat-menu-item>M-User</a>  
        </mat-menu>
        <a mat-button [matMenuTriggerFor]="userMenu">User</a>
        <a mat-button routerLink="/cart" routerLinkActive="active" style=" font-size: 23px;">
@@ -32,6 +33,8 @@
            <a mat-menu-item>Logout</a>
        </mat-menu>
     </div>
+    </mat-toolbar-row>
+
 </mat-toolbar>
  <ng-container>
      <mat-sidenav-container class="example-container">
@@ -43,7 +46,6 @@
            <router-outlet></router-outlet>
        </mat-sidenav-content>
      </mat-sidenav-container>
-
      <mat-toolbar class="example-footer">E-Shop</mat-toolbar>
  </ng-container>
 
