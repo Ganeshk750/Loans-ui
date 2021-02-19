@@ -2,7 +2,7 @@
 <mat-toolbar color="primary" class="example-header">
     <mat-toolbar-row>
        <button mat-icon-button (click)="sidenav.toggle()">
-           <mat-icon>Menu</mat-icon>
+           <mat-icon>menu</mat-icon>
        </button> 
        <a mat-button>E-Shop</a>
        <div class="col-md-7 justify-content-start"> 
@@ -22,10 +22,10 @@
        </mat-menu>
        <a mat-button [matMenuTriggerFor]="userMenu">User</a>
        <a mat-button routerLink="/cart" routerLinkActive="active" style=" font-size: 23px;">
-        <i style="font-size: 23px;" class="fas fa-cart-plus" matBadge="5"
-         matBadgeOverlap="false"
-         matBadgePosition="above after" matBadgeSize="medium"
-         matBadgeColor="warn"></i>
+        <i style="font-size: 23px" class="fa fa-cart-plus" [matBadge]="5"
+           matBadgeOverlap="false"
+           matBadgePosition="above after" matBadgeSize="medium"
+           matBadgeColor="warn"></i>
        </a>
        <mat-menu #userMenu>
            <a mat-menu-item>Profile</a>
