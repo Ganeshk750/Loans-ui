@@ -8,6 +8,7 @@ import { Profile } from '../../models/profile';
 import { User } from '../../models/user';
 import { Observable } from 'rxjs';
 import { UserData } from '../../models/user-data';
+import { CartService } from '../cart/cart.service';
 
 
 @Injectable({
@@ -36,7 +37,8 @@ export class AuthService {
 
 
   constructor(private _http: HttpClient,
-              private _router: Router) { }
+              private _router: Router,
+              private _cartService: CartService) { }
 
 
 
