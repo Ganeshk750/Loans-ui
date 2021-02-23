@@ -15,6 +15,7 @@ import { AdminModule } from './admin/admin.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilesModule } from './shared/files/files.module';
 import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { HomeComponent } from './components/home/home.component';
     NgxModule,
     FormsModule,
     ReactiveFormsModule,
-    FilesModule
+    FilesModule,
+    HttpClientModule
 
   ],
   providers: [],
