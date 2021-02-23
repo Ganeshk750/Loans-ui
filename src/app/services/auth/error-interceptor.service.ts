@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError, catchError } from 'rxjs';
+import { Observable, throwError} from 'rxjs';
+import { catchError } from "rxjs/operators";
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from "@angular/material/snack-bar";
 
+
+// This interceptor service need custom injection
 @Injectable({
   providedIn: 'root'
 })
