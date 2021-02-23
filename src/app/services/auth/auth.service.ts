@@ -16,6 +16,10 @@ import { CartService } from '../cart/cart.service';
 })
 export class AuthService {
 
+  constructor(private _http: HttpClient,
+    private _router: Router,
+    private _cartService: CartService) { }
+
 
   _registerUrl = `http://localhost:3000/auth/register`;
   _loginUrl = `http://localhost:3000/auth/login`;
@@ -34,12 +38,6 @@ export class AuthService {
   public cartItem: CartItem;
   public profile: Profile;
   public currentUser: User;
-
-
-  constructor(private _http: HttpClient,
-              private _router: Router,
-              private _cartService: CartService) { }
-
 
 
   registerUser(registrationInfo): Observable<void> {
