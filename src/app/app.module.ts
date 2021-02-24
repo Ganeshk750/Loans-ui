@@ -18,6 +18,16 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './services/auth/token-interceptor.service';
 import { ErrorInterceptorService } from './services/auth/error-interceptor.service';
+import { CategoryDetailsComponent } from './components/category-details/category-details.component';
+import { CategoryListComponent } from './components/category-list/category-list.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { CartComponent } from './components/cart/cart.component';
+import { OrderComponent } from './components/order/order.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -28,7 +38,17 @@ import { ErrorInterceptorService } from './services/auth/error-interceptor.servi
     ApplicationErrorComponent,
     PageNotFoundComponent,
     ResourceNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    CategoryDetailsComponent,
+    CategoryListComponent,
+    ProductDetailsComponent,
+    ProductListComponent,
+    ContactComponent,
+    LoginComponent,
+    RegisterComponent,
+    CartComponent,
+    OrderComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
