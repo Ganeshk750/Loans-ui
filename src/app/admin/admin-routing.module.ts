@@ -6,17 +6,18 @@ import { CategoryResolverService } from '../resolvers/category/category-resolver
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ManageCategoriesComponent } from './components/manage-categories/manage-categories.component';
 import { ManageUsersComponent } from './components/manage-users/manage-users.component';
+import { AdminAuthGuard } from '../guards/admin-auth.guard';
 
 
 const routes: Routes = [
   {
     path: '',
-   // canActivate: [AdminAuthGuard],
+    canActivate: [AdminAuthGuard],
     children: [
       {
         path: 'dashboard',
         component: DashboardComponent,
-        //canActivate: [AdminAuthGuard]
+        canActivate: [AdminAuthGuard]
       },
       {
         path: 'management',
@@ -27,7 +28,7 @@ const routes: Routes = [
             resolve: {
               categories: CategoryResolverService
             },
-           // canActivate: [AdminAuthGuard]
+            canActivate: [AdminAuthGuard]
           },
           {
             path: 'manage-users',
@@ -35,7 +36,7 @@ const routes: Routes = [
             resolve: {
               allUsers: UserResolverService
             },
-           // canActivate: [AdminAuthGuard]
+            canActivate: [AdminAuthGuard]
           }
         ]
       }

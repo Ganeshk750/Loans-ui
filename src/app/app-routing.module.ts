@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductResolverService } from './resolvers/product/product-resolver.service';
@@ -16,6 +16,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { OrderComponent } from './components/order/order.component';
 import { ProfileResolverService } from './resolvers/profile/profile-resolver.service';
 import { ProfileComponent } from './components/profile/profile.component';
+import { UserAuthGuard } from './guards/user-auth.guard';
 
 
 /* const routes: Routes = [
@@ -40,12 +41,12 @@ const routes: Routes = [
     resolve: {
       profile: ProfileResolverService
     },
-   // canActivate: [UserAuthGuard]
+    canActivate: [UserAuthGuard]
   },
   {
     path: 'orders',
     component: OrderComponent,
-   // canActivate: [UserAuthGuard]
+    canActivate: [UserAuthGuard]
 
   },
   {
@@ -54,7 +55,7 @@ const routes: Routes = [
     resolve: {
       userCart: CartResolverService
     },
-   // canActivate: [UserAuthGuard],
+    canActivate: [UserAuthGuard],
   },
   {
     path: 'auth',
@@ -95,11 +96,11 @@ const routes: Routes = [
     path: 'categories/:id',
     component: CategoryDetailsComponent
   },
- // { path: "notFoundResource/:status", component: ResourceNotFoundComponent },
- // { path: "applicationError/:status", component: ApplicationErrorComponent },
+  // { path: "notFoundResource/:status", component: ResourceNotFoundComponent },
+  // { path: "applicationError/:status", component: ApplicationErrorComponent },
   {
     path: 'admin', // this is the prefix route
-   // canActivate: [AdminAuthGuard],
+    // canActivate: [AdminAuthGuard],
     // lazy loading: this module will not loaded only if the the user navigate into it
     loadChildren: () => import('./admin/admin.module').then(a => a.AdminModule)
   },
@@ -110,7 +111,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
