@@ -1,5 +1,4 @@
-import {User} from "./user";
-import {Invoice} from "./invoice";
+import { User } from "./user";
 import { PaymentMethod } from '../enums/payment-methods.enum';
 
 export class Payment {
@@ -7,7 +6,7 @@ export class Payment {
   client: User;
   date: Date;
   amount: number;
-  payment_method: PaymentMethods;
+  payment_method: PaymentMethod;
   invoiceId: number;
 }
 
